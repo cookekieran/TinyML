@@ -22,7 +22,7 @@ class TinyCNN(torch.nn.Module):
         
         self.linear1 = nn.Linear(64, 32)
         self.rl4 = nn.ReLU()
-        self.dropout1 = nn.Dropout(0.2) # Lower dropout is often better for TinyML
+        self.dropout1 = nn.Dropout(0.2)
         self.linear2 = nn.Linear(32, num_outputs)
 
     def forward(self, x):
@@ -43,7 +43,7 @@ num_classes = 4
 model = TinyCNN(num_outputs=num_classes).to(device)
 model.apply(init_weights)
 
-def export_to_onnx(model_path, output_name="model.onnx"):
+def export_to_onnx(model_path, output_name="model2.onnx"):
     num_classes = 4 
     model = TinyCNN(num_outputs=num_classes)
 
@@ -67,4 +67,4 @@ def export_to_onnx(model_path, output_name="model.onnx"):
     print("Success!")
 
 if __name__ == "__main__":
-    export_to_onnx("best_model.pth")
+    export_to_onnx("best_model2.pth")
