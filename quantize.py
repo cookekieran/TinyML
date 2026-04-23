@@ -3,7 +3,7 @@ import numpy as np
 import glob
 import cv2
 
-converter = tf.lite.TFLiteConverter.from_saved_model("saved_model")
+converter = tf.lite.TFLiteConverter.from_saved_model("tf_model")
 
 converter.optimizations = [tf.lite.Optimize.DEFAULT]
 
