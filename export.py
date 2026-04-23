@@ -32,7 +32,6 @@ class TinyCNN(torch.nn.Module):
         x = self.pool(x)
         x = self.flatten(x)
         x = self.rl4(self.linear1(x))
-        x = self.dropout1(x)
         x = self.linear2(x)
         return x
 
