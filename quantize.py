@@ -3,7 +3,7 @@ import numpy as np
 import glob
 import cv2
 
-loaded = tf.saved_model.load("tf_model")
+loaded = tf.saved_model.load("tf_model2")
 
 concrete_func = None
 
