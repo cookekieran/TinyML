@@ -1,7 +1,7 @@
 import os
 import shutil
 
-source_folder = 'C:/Personal Scratchpad/Music Hand Gestures/datav2/training'
+source_folder = 'C:/Personal Scratchpad/Music Hand Gestures/datav3/training'
 
 def organize_data():
     files = [f for f in os.listdir(source_folder) if os.path.isfile(os.path.join(source_folder, f))]
