@@ -1,6 +1,16 @@
 """
-This script organises raw training data from edgeimpulse.com, labelling images with their 
-respective classes. Images for each label are grouped into a folder.
+Data Organiser for Edge Impulse Image Exports
+
+This script automates the sorting of raw training images into a directory 
+structure suitable for ImageFolder loaders, like Pytorch.
+
+Logic:
+    It parses filenames using the first dot-separated segment as the label 
+    (e.g., 'rock.01.jpg' -> creates a folder named 'rock').
+
+Directory Structure:
+    Input:  [data]/label.unique_id.jpg
+    Output: [data]/label/label.unique_id.jpg
 """
 
 import os
