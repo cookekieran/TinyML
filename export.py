@@ -58,10 +58,10 @@ def export_to_onnx(model_path, output_name="model5.onnx"):
         dummy_input, 
         output_name,
         export_params=True,        # Store the trained parameter weights inside the file
-        opset_version=11,          # Standard version for most Edge AI compilers
-        do_constant_folding=True,  # Optimization: simplifies the graph
-        input_names=['input'],     # Name of the input node
-        output_names=['output']    # Name of the output node
+        opset_version=11,          # Standard version for Edge AI compilers
+        do_constant_folding=True,  # Optimisation
+        input_names=['input'],    
+        output_names=['output']    
     )
     print("Success!")
 
