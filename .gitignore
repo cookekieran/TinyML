@@ -8,3 +8,9 @@ saved_model/
 *.pth
 tf_model/
 tf_model_fixed/
+
+# Seeed Hardware files
+xmodem/
+*.bin
+App
+*.img
