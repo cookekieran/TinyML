@@ -1,8 +1,13 @@
+"""
+This script loads a convolutional neural network with its trained paramaters
+and exports the model as a .onnx file.
+"""
+
 import torch
 import torch.onnx
 import torch.nn as nn
 
-device = 'cpu'
+device = 'cuda' if torch.is_cuda_avaliable() else 'cpu'
 
 class TinyCNN(torch.nn.Module):
     def __init__(self, num_outputs):
@@ -43,10 +48,10 @@ num_classes = 2
 model = TinyCNN(num_outputs=num_classes).to(device)
 model.apply(init_weights)
 
-def export_to_onnx(model_path, output_name="model5.onnx"):
+def export_to_onnx(model_path, output_name="model.onnx"):
     model = TinyCNN(num_outputs=num_classes)
 
-    model.load_state_dict(torch.load(model_path, map_location=torch.device('cpu')))
+    model.load_state_dict(torch.load(model_path, map_location=torch.device(device)))
     
     model.eval()
 
