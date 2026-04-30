@@ -50,7 +50,7 @@ num_classes = 2
 model = TinyCNN(num_outputs=num_classes).to(device)
 model.apply(init_weights)
 
-def export_to_onnx(model_path, output_name="model.onnx"):
+def export_to_onnx(model_path, output_name="models/model.onnx"):
     model = TinyCNN(num_outputs=num_classes)
 
     model.load_state_dict(torch.load(model_path, map_location=torch.device(device)))
@@ -73,4 +73,4 @@ def export_to_onnx(model_path, output_name="model.onnx"):
     print("Success!")
 
 if __name__ == "__main__":
-    export_to_onnx("best_model.pth")
+    export_to_onnx("models/best_model.pth")
