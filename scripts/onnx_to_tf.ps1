@@ -1,3 +1,12 @@
-# ONNX to TensorFlow conversion script
+<#
+This script converts an ONNX model to a TensorFlow appropriate
+format. This is done as an intermediatary step to prepare a
+.tflite file for Edge TPU deployment.
 
-onnx2tf -i model.onnx -o tf_model
+-i: Input path
+-o: Output directory folder
+#>
+
+onnx2tf -i models/model.onnx -o tf_model
+
+Write-Host "Conversion Complete."
