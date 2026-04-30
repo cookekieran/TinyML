@@ -1,3 +1,9 @@
+"""
+This script uses a serial port for hand gesture inference from the Grove Impulse 
+Edge AI v2 module. When a hand is detected with high confidence, it simulates 
+a 'play/pause' key press, to start/stop music.
+"""
+
 import serial
 import pyautogui
 import time
